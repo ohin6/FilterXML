@@ -71,6 +71,7 @@ namespace FilterData
             {
                 DataView dv = dataGridView1.DataSource as DataView; //datatable in datagridview as variable Dataview (allows changes to datatable without affecting original file)
                 if (dv != null)
+                    dv.Sort = Txt_Search.Text;//RowFilter allows query of dataview table from textbox search input (Txt_search)
                     dv.RowFilter = Txt_Search.Text;//RowFilter allows query of dataview table from textbox search input (Txt_search)
             }
             catch(Exception ex)
@@ -85,12 +86,17 @@ namespace FilterData
                 btn_Search.PerformClick();
         }
 
+
+
+
+
+
         private void btn_Export_Click(object sender, EventArgs e)
         {
             saveFileDialog1.InitialDirectory = @"Y:\Liverpool projects\Windows form app\Test";
             saveFileDialog1.Title = "Save Excel File";
             saveFileDialog1.FileName = "";
-            saveFileDialog1.Filter = "txt|*.txt";
+            saveFileDialog1.Filter = "csv|*.csv";
             if (saveFileDialog1.ShowDialog() != DialogResult.Cancel)
             {
                 TextWriter writer = new StreamWriter(saveFileDialog1.FileName.ToString());
@@ -99,7 +105,7 @@ namespace FilterData
                 {
                     for (int j = 0; j < dataGridView1.Columns.Count; j++)
                     {
-                        writer.Write("\t" + dataGridView1.Rows[i].Cells[j].Value.ToString() + "\t" + "|");
+                        writer.Write("\t" + dataGridView1.Rows[i].Cells[j].Value.ToString() + "\t" + ",");
                     }
                     writer.WriteLine("");
                     
