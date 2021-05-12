@@ -71,7 +71,7 @@ namespace FilterData
             {
                 DataView dv = dataGridView1.DataSource as DataView; //datatable in datagridview as variable Dataview (allows changes to datatable without affecting original file)
                 if (dv != null)
-                    dv.Sort = Txt_Search.Text;//RowFilter allows query of dataview table from textbox search input (Txt_search)
+                   
                     dv.RowFilter = Txt_Search.Text;//RowFilter allows query of dataview table from textbox search input (Txt_search)
             }
             catch(Exception ex)
