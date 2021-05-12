@@ -34,8 +34,9 @@ namespace FilterData
             this.Txt_Search = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Btn_Open = new System.Windows.Forms.Button();
-            this.Txt_Records = new System.Windows.Forms.TextBox();
             this.Lbl_Total = new System.Windows.Forms.Label();
+            this.btn_Export = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,20 +78,13 @@ namespace FilterData
             // 
             // Btn_Open
             // 
-            this.Btn_Open.Location = new System.Drawing.Point(683, 423);
+            this.Btn_Open.Location = new System.Drawing.Point(688, 8);
             this.Btn_Open.Name = "Btn_Open";
             this.Btn_Open.Size = new System.Drawing.Size(84, 29);
             this.Btn_Open.TabIndex = 4;
             this.Btn_Open.Text = "Open";
             this.Btn_Open.UseVisualStyleBackColor = true;
             this.Btn_Open.Click += new System.EventHandler(this.Btn_Open_Click);
-            // 
-            // Txt_Records
-            // 
-            this.Txt_Records.Location = new System.Drawing.Point(436, 423);
-            this.Txt_Records.Name = "Txt_Records";
-            this.Txt_Records.Size = new System.Drawing.Size(241, 23);
-            this.Txt_Records.TabIndex = 5;
             // 
             // Lbl_Total
             // 
@@ -101,13 +95,23 @@ namespace FilterData
             this.Lbl_Total.TabIndex = 6;
             this.Lbl_Total.Text = "Total Records:";
             // 
+            // btn_Export
+            // 
+            this.btn_Export.Location = new System.Drawing.Point(688, 426);
+            this.btn_Export.Name = "btn_Export";
+            this.btn_Export.Size = new System.Drawing.Size(84, 29);
+            this.btn_Export.TabIndex = 7;
+            this.btn_Export.Text = "Export";
+            this.btn_Export.UseVisualStyleBackColor = true;
+            this.btn_Export.Click += new System.EventHandler(this.btn_Export_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 461);
+            this.Controls.Add(this.btn_Export);
             this.Controls.Add(this.Lbl_Total);
-            this.Controls.Add(this.Txt_Records);
             this.Controls.Add(this.Btn_Open);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Txt_Search);
@@ -128,8 +132,9 @@ namespace FilterData
         private System.Windows.Forms.TextBox Txt_Search;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button Btn_Open;
-        private System.Windows.Forms.TextBox Txt_Records;
         private System.Windows.Forms.Label Lbl_Total;
+        private System.Windows.Forms.Button btn_Export;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 

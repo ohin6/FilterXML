@@ -17,3 +17,6 @@ Y:\Liverpool projects\Windows form app\FilterData\obj\Debug\netcoreapp3.1\Filter
 Y:\Liverpool projects\Windows form app\FilterData\obj\Debug\netcoreapp3.1\FilterData.dll
 Y:\Liverpool projects\Windows form app\FilterData\obj\Debug\netcoreapp3.1\FilterData.pdb
 Y:\Liverpool projects\Windows form app\FilterData\obj\Debug\netcoreapp3.1\FilterData.genruntimeconfig.cache
+Y:\Liverpool projects\Windows form app\FilterData\bin\Debug\netcoreapp3.1\Interop.Microsoft.Office.Interop.Excel.dll
+Y:\Liverpool projects\Windows form app\FilterData\obj\Debug\netcoreapp3.1\Interop.Microsoft.Office.Interop.Excel.dll
+Y:\Liverpool projects\Windows form app\FilterData\obj\Debug\netcoreapp3.1\FilterData.csproj.ResolveComReference.cache

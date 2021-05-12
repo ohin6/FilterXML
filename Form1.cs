@@ -1,9 +1,11 @@
 ﻿using ClosedXML.Excel;
+using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +29,7 @@ namespace FilterData
                 {
                     //Create a DataTable from file selected in OpenFileDialog
                     Cursor.Current = Cursors.WaitCursor;
-                    DataTable dt = new DataTable();
+                    System.Data.DataTable dt = new System.Data.DataTable();
                     using(XLWorkbook workbook = new XLWorkbook(ofd.FileName))//using XMLworkbook from the selected file from openfiledialog
                     {
                         bool isFirstRow = true; //first row added as Header
@@ -81,6 +83,31 @@ namespace FilterData
         {
             if (e.KeyChar == (char)13)// limiting search terms to 13 characters?
                 btn_Search.PerformClick();
+        }
+
+        private void btn_Export_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.InitialDirectory = @"Y:\Liverpool projects\Windows form app\Test";
+            saveFileDialog1.Title = "Save Excel File";
+            saveFileDialog1.FileName = "";
+            saveFileDialog1.Filter = "txt|*.txt";
+            if (saveFileDialog1.ShowDialog() != DialogResult.Cancel)
+            {
+                TextWriter writer = new StreamWriter(saveFileDialog1.FileName.ToString());
+
+                for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                {
+                    for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                    {
+                        writer.Write("\t" + dataGridView1.Rows[i].Cells[j].Value.ToString() + "\t" + "|");
+                    }
+                    writer.WriteLine("");
+                    writer.WriteLine("-----------------------------------------------------");
+                }
+                writer.Close();
+                MessageBox.Show("Data Exported");
+            }
+
         }
     }
 }
