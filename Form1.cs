@@ -18,6 +18,7 @@ namespace FilterData
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         //Tutorial on https://www.youtube.com/watch?v=k44-N4Pegag&t=219s
@@ -30,6 +31,7 @@ namespace FilterData
                     //Create a DataTable from file selected in OpenFileDialog
                     Cursor.Current = Cursors.WaitCursor;
                     System.Data.DataTable dt = new System.Data.DataTable();
+                    
                     using(XLWorkbook workbook = new XLWorkbook(ofd.FileName))//using XMLworkbook from the selected file from openfiledialog
                     {
                         bool isFirstRow = true; //first row added as Header
@@ -56,7 +58,19 @@ namespace FilterData
                         }
                         //convert datatable to datagridview viewer
                         dataGridView1.DataSource = dt.DefaultView;
-                        Lbl_Total.Text = $"Total Records: {dataGridView1.RowCount}"; //change lbl.total to display number of rows in datagrid view
+
+                        //select columns - make sure datagridview selectionMode is on CellSelect in Form.cs[Design]
+                        foreach (DataGridViewColumn c in dataGridView1.Columns)
+                        {
+                            c.SortMode = DataGridViewColumnSortMode.NotSortable;
+                            c.Selected = false;
+                        }
+                        dataGridView1.SelectionMode = DataGridViewSelectionMode.FullColumnSelect;
+                        dataGridView1.Columns[0].Selected = true;
+                        dataGridView1.Columns[2].Selected = true;
+
+                        //change lbl.total to display number of rows in datagrid view
+                        Lbl_Total.Text = $"Total Records: {dataGridView1.RowCount}"; 
                         Cursor.Current = Cursors.Default;
 
                     }
@@ -103,7 +117,7 @@ namespace FilterData
 
                 for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
                 {
-                    for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                    for (int j = dataGridView1.Rows.Count; j < dataGridView1.Rows.Count -1; j++)
                     {
                         writer.Write("\t" + dataGridView1.Rows[i].Cells[j].Value.ToString() + "\t" + ",");
                     }

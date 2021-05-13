@@ -73,6 +73,7 @@ namespace FilterData
             this.dataGridView1.Location = new System.Drawing.Point(22, 89);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView1.Size = new System.Drawing.Size(745, 328);
             this.dataGridView1.TabIndex = 3;
             // 

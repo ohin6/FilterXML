@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bgeSfgXBl3sNkKCsmRU9Fklp7r8w8XsEYf/dHdToJOIXypI2RCQO9nrfRTw58bYlNfQ056jN48Nde2L17lge7A==",
+  "dgSpecHash": "sAmvJvk0ImqyBObwAZuF/+aOifCamfG/XY0WcxIYd+izzoNAN2SOlr2vwXOdTPiSlRJWUIRr24hmXvNQxZLRCg==",
   "success": true,
   "projectFilePath": "Y:\\Liverpool projects\\Windows form app\\FilterData\\FilterData.csproj",
   "expectedPackageFiles": [
@@ -83,8 +83,7 @@
     "C:\\Users\\OWi\\.nuget\\packages\\system.threading.tasks.extensions\\4.3.0\\system.threading.tasks.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\OWi\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\OWi\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\OWi\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\OWi\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.13\\microsoft.netcore.app.host.win-x64.3.1.13.nupkg.sha512"
+    "C:\\Users\\OWi\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }
